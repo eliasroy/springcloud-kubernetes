@@ -9,3 +9,7 @@ E
 Ymsvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/model/entity/Usuario.java,a\4\a4ba0e78d72c38e2dfbbd9b9d1235731f077ca5c
 ì
 cmsvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/repositories/UsuarioRepository.java,0\3\0319f2afc3e34528076a12208846cce189aa3d85
+ã
+[msvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/service/UsuarioService.java,6\a\6a346791f81ace59e7c572d100050870fc65b7bd
+è
+_msvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/service/UsuarioServiceImpl.java,e\3\e37188db7a244a2fc8d8ee48192f8603ec5e13fa
