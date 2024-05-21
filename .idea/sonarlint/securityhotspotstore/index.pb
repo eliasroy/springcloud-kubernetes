@@ -7,3 +7,5 @@ E
 \msvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/MsvcUsuariosApplication.java,7\e\7e51a6d1b71a952dc15b7e0c3510e415b55763df
 ‰
 Ymsvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/model/entity/Usuario.java,a\4\a4ba0e78d72c38e2dfbbd9b9d1235731f077ca5c
+“
+cmsvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/repositories/UsuarioRepository.java,0\3\0319f2afc3e34528076a12208846cce189aa3d85
