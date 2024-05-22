@@ -15,12 +15,13 @@ import org.springframework.stereotype.Controller;
 import java.util.List;
 import java.util.Optional;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 @RequestMapping("/usuario")
 public class UsuarioController {
     @Autowired
     private UsuarioService service;
+
     @GetMapping("/listar")
     @ResponseStatus(HttpStatus.OK)
     public List<Usuario> listar(){
@@ -56,10 +57,16 @@ public class UsuarioController {
         return ResponseEntity.notFound().build();
     }
 
-   
-
-
-
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ResponseEntity<?> eliminar(@PathVariable Long id){
+        Optional<Usuario> usuarioDb = service.porId(id);
+        if(!usuarioDb.isPresent()){
+            return ResponseEntity.notFound().build();
+        }
+        service.eliminar(id);
+        return ResponseEntity.noContent().build();
+    }
 
 
 }

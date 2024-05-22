@@ -1,7 +1,11 @@
 
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Æ™¶ú1J$8b076360-c9d4-40b2-894b-b3c031a772b6
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8îĞú1J$d5f70fc0-9f2f-41f1-b046-2f00a73432d1
 i
-java:S1452"&Remove usage of generic wildcard type.(íÜëá8É™¶ú1J$c9e138c9-b03d-43f7-ba42-ab279b11829b
+java:S1452 "&Remove usage of generic wildcard type.(íÜëá8 îĞú1J$532d472d-c2db-41fa-abbb-2f4a4da3feae
 i
-java:S1452/"&Remove usage of generic wildcard type.(¥­„¡8¡™¹ú1J$e8f4fa7f-b915-43f8-a1cc-9d129023ca51
+java:S14520"&Remove usage of generic wildcard type.(¥­„¡8¢îĞú1J$9f006d37-07dd-40b0-87dd-6b71a126f4a9
+n
+java:S1452>"&Remove usage of generic wildcard type.(”øÈ»şÿÿÿÿ8£îĞú1J$8190a0c3-cb9b-4bce-9fc5-b3c200b1c398
+
+java:S1128"FRemove this unused import 'org.springframework.stereotype.Controller'.(øŠ—Öùÿÿÿÿ8¾›ùú1J$42b8c3cd-0cf3-43b6-9de1-183b50175c40
