@@ -36,7 +36,27 @@ public class UsuarioController {
         return ResponseEntity.notFound().build();
     }
 
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Usuario crear(@RequestBody Usuario usuario){
+        return service.guardar(usuario);
+    }
 
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<?> editar(@RequestBody Usuario usuario, @PathVariable Long id){
+        Optional<Usuario> usuarioDb = service.porId(id);
+        if(usuarioDb.isPresent()){
+            Usuario usuarioUpdate = usuarioDb.get();
+            usuarioUpdate.setNombre(usuario.getNombre());
+            usuarioUpdate.setEmail(usuario.getEmail());
+            usuarioUpdate.setPassword(usuario.getPassword());
+            return ResponseEntity.status(HttpStatus.CREATED).body(service.guardar(usuarioUpdate));
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+   
 
 
 

@@ -1,5 +1,7 @@
 
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Æ™¶ú1J$80dff6b5-deed-4fd5-9e7c-b7b0902c6dce
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Æ™¶ú1J$8b076360-c9d4-40b2-894b-b3c031a772b6
 i
-java:S1452"&Remove usage of generic wildcard type.(íÜëá8É™¶ú1J$5e1fd98e-f2e9-4cf1-ae28-95df76073c72
+java:S1452"&Remove usage of generic wildcard type.(íÜëá8É™¶ú1J$c9e138c9-b03d-43f7-ba42-ab279b11829b
+i
+java:S1452/"&Remove usage of generic wildcard type.(¥­„¡8¡™¹ú1J$e8f4fa7f-b915-43f8-a1cc-9d129023ca51
