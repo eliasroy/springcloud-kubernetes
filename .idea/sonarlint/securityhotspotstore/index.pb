@@ -13,3 +13,7 @@ cmsvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/repositories/Us
 [msvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/service/UsuarioService.java,6\a\6a346791f81ace59e7c572d100050870fc65b7bd
 è
 _msvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/service/UsuarioServiceImpl.java,e\3\e37188db7a244a2fc8d8ee48192f8603ec5e13fa
+ë
+amsvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/controller/UsuarioController.java,5\1\512f79745404ffa6e72edd9cf76605d2f8e0adc4
+P
+ msvc-usuarios/docker-compose.yml,5\3\53d43cf0a9e97ebc1994720cf6db15cddaccc962
