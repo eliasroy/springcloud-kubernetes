@@ -17,5 +17,7 @@ _msvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/service/Usuario
 amsvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/controller/UsuarioController.java,5\1\512f79745404ffa6e72edd9cf76605d2f8e0adc4
 P
  msvc-usuarios/docker-compose.yml,5\3\53d43cf0a9e97ebc1994720cf6db15cddaccc962
-y
-Imsvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/TEST.java,8\6\86b9aa133a5695efd8020f0f6fbc7b31cd9e8bf0
+‘
+amcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/McsvCursosApplication.java,9\1\9115cffe225b84ec9f2941e4b8ce2bd115844441
+C
+mcsv-cursos/pom.xml,4\1\41dfe185435a898c471db556a41f23dd5e79df36

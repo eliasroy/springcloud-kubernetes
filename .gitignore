@@ -36,3 +36,25 @@ build/
 
 ### Mac OS ###
 .DS_Store
+*.xml
+*.pb
+.idea/encodings.xml
+.idea/sonarlint/issuestore/4/1/41dfe185435a898c471db556a41f23dd5e79df36
+.idea/sonarlint/issuestore/8/6/86b9aa133a5695efd8020f0f6fbc7b31cd9e8bf0
+.idea/sonarlint/issuestore/index.pb
+.idea/sonarlint/issuestore/9/1/9115cffe225b84ec9f2941e4b8ce2bd115844441
+.idea/sonarlint/securityhotspotstore/4/1/41dfe185435a898c471db556a41f23dd5e79df36
+.idea/sonarlint/securityhotspotstore/8/6/86b9aa133a5695efd8020f0f6fbc7b31cd9e8bf0
+.idea/sonarlint/securityhotspotstore/9/1/9115cffe225b84ec9f2941e4b8ce2bd115844441
+.idea/sonarlint/securityhotspotstore/index.pb
+.idea/encodings.xml
+.idea/sonarlint/issuestore/8/6/86b9aa133a5695efd8020f0f6fbc7b31cd9e8bf0
+.idea/sonarlint/issuestore/index.pb
+.idea/sonarlint/securityhotspotstore/8/6/86b9aa133a5695efd8020f0f6fbc7b31cd9e8bf0
+.idea/sonarlint/securityhotspotstore/index.pb
+.idea/encodings.xml
+.idea/sonarlint/issuestore/8/6/86b9aa133a5695efd8020f0f6fbc7b31cd9e8bf0
+.idea/sonarlint/issuestore/index.pb
+.idea/sonarlint/securityhotspotstore/8/6/86b9aa133a5695efd8020f0f6fbc7b31cd9e8bf0
+.idea/sonarlint/securityhotspotstore/index.pb
+.idea/sonarlint/securityhotspotstore/8/6/86b9aa133a5695efd8020f0f6fbc7b31cd9e8bf0
