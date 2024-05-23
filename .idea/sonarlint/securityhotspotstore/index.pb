@@ -21,3 +21,13 @@ P
 amcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/McsvCursosApplication.java,9\1\9115cffe225b84ec9f2941e4b8ce2bd115844441
 C
 mcsv-cursos/pom.xml,4\1\41dfe185435a898c471db556a41f23dd5e79df36
+à
+Xmcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/entity/Curso.java,f\1\f12fd7b37fc71049752eb2507174b9ae0bce3938
+ñ
+fmcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/repository/CursoRepository.java,4\c\4cab6e96fb6691ae4aa039798414f90b34f4ebd6
+ë
+amcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/service/ICursoService.java,4\5\45994ffc883e69a1770902fb11a469baa5c52abc
+ê
+`mcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/service/CursoService.java,9\e\9ec4f99be6de798ea065b0c7a65ce77a6b88b9ce
+ñ
+fmcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/controller/CursoController.java,2\b\2b9390d0310d965d037e291e66107f831e3a22d4

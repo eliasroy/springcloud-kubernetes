@@ -58,3 +58,6 @@ build/
 .idea/sonarlint/securityhotspotstore/8/6/86b9aa133a5695efd8020f0f6fbc7b31cd9e8bf0
 .idea/sonarlint/securityhotspotstore/index.pb
 .idea/sonarlint/securityhotspotstore/8/6/86b9aa133a5695efd8020f0f6fbc7b31cd9e8bf0
+/.idea
+/.idea
+/.idea/sonarlint
