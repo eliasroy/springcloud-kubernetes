@@ -13,3 +13,16 @@ services:
       - "3306:3306"
     expose:
       - "3306"
+  db-cursos:
+    container_name: db-cursos
+    image: postgres:15.2
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ms_cursos
+      POSTGRES_USER: elias
+      POSTGRES_PASSWORD: elias
+    ports:
+      - 5431:5431
+    expose:
+      - 5431
+    command: -p 5431

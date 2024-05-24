@@ -1,6 +1,6 @@
 package com.elias.springcloud.mscv_cursos.mcsvcursos.service;
 
-import com.elias.springcloud.mscv_cursos.mcsvcursos.entity.Curso;
+import com.elias.springcloud.mscv_cursos.mcsvcursos.models.entity.Curso;
 import com.elias.springcloud.mscv_cursos.mcsvcursos.repository.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
