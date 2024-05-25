@@ -1,6 +1,8 @@
 package com.elias.springcloud.mscv_cursos.mcsvcursos.controller;
 
+import com.elias.springcloud.mscv_cursos.mcsvcursos.models.Usuario;
 import com.elias.springcloud.mscv_cursos.mcsvcursos.models.entity.Curso;
+import com.elias.springcloud.mscv_cursos.mcsvcursos.models.entity.CursoUsuario;
 import com.elias.springcloud.mscv_cursos.mcsvcursos.service.ICursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -53,4 +55,52 @@ public class CursoController {
         service.eliminar(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping("/asignar-usuario/{cursoId}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<?> asignarUsuario(@RequestBody Usuario usuario, @PathVariable Long cursoId){
+        Optional<Usuario> o ;
+        try {
+            o = service.asignarUsuario(usuario, cursoId);
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+        if(!o.isPresent()){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(o);
+
+    }
+
+    @PostMapping("/crear-usuario/{cursoId}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<?> crearUsuario(@RequestBody Usuario usuario, @PathVariable Long cursoId){
+        Optional<Usuario> o ;
+        try {
+            o = service.crearUsuario(usuario, cursoId);
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+        if(!o.isPresent()){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(o);
+
+    }
+    @PostMapping("/eliminar-usuario/{cursoId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ResponseEntity<?> eliminnrUsuario(@RequestBody Usuario usuario, @PathVariable Long cursoId){
+        Optional<Usuario> o ;
+        try {
+            o = service.eliminarUsuario(usuario, cursoId);
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+        if(!o.isPresent()){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(o);
+
+    }
+
 }
