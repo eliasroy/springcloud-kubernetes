@@ -26,3 +26,13 @@ services:
     expose:
       - 5431
     command: -p 5431
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "elias@elias.com"
+      PGADMIN_DEFAULT_PASSWORD: "elias"
+    ports:
+      - "80:80"
+    depends_on:
+      - db-cursos
