@@ -1,5 +1,6 @@
 package com.elias.springcloud.mscv_cursos.mcsvcursos.service;
 
+import com.elias.springcloud.mscv_cursos.mcsvcursos.clients.UsuarioClientRest;
 import com.elias.springcloud.mscv_cursos.mcsvcursos.models.Usuario;
 import com.elias.springcloud.mscv_cursos.mcsvcursos.models.entity.Curso;
 import com.elias.springcloud.mscv_cursos.mcsvcursos.repository.CursoRepository;
@@ -12,6 +13,10 @@ import java.util.Optional;
 public class CursoService implements ICursoService{
     @Autowired
     private CursoRepository repository;
+
+    @Autowired
+    private UsuarioClientRest usuarioClientRest;
+
     @Override
     public List<Curso> listar() {
         return (List<Curso>) repository.findAll();
@@ -23,6 +28,7 @@ public class CursoService implements ICursoService{
         if(curso.isPresent())
             return curso;
         return Optional.empty();
+
     }
 
     @Override
@@ -37,6 +43,7 @@ public class CursoService implements ICursoService{
 
     @Override
     public Optional<Usuario> asignarUsuario(Usuario usuario, Long cursoId) {
+
         return Optional.empty();
     }
 
