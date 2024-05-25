@@ -1,5 +1,6 @@
 package com.elias.springcloud.mscv_cursos.mcsvcursos.service;
 
+import com.elias.springcloud.mscv_cursos.mcsvcursos.models.Usuario;
 import com.elias.springcloud.mscv_cursos.mcsvcursos.models.entity.Curso;
 import com.elias.springcloud.mscv_cursos.mcsvcursos.repository.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,20 @@ public class CursoService implements ICursoService{
     @Override
     public void eliminar(Long id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Usuario> asignarUsuario(Usuario usuario, Long cursoId) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<Usuario> crearUsuario(Usuario usuario, Long cursoId) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<Usuario> eliminarUsuario(Usuario usuario, Long cursoId) {
+        return Optional.empty();
     }
 }
