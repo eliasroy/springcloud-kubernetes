@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,7 +15,6 @@ import java.util.List;
 @Data
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,13 +23,16 @@ public class Curso {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     //crear la llave foranea
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "id_cursos")
     private List<CursoUsuario> cursoUsuarios;
 
     @Transient
     private List<Usuario>usuarios;
 
-
+    public Curso() {
+        this.cursoUsuarios = new ArrayList<>();
+        this.usuarios = new ArrayList<>();
+    }
 
     //metodos
     public void addCursoUsuario(CursoUsuario cursoUsuario){

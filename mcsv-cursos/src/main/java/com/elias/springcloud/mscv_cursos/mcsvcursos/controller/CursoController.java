@@ -24,7 +24,7 @@ public class CursoController {
     }
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Optional<Curso>> detalle(Long id){
+    public ResponseEntity<Optional<Curso>> detalle(@PathVariable Long id){
         Optional<Curso> curso = service.porId(id);
         if(curso.isPresent())
             return ResponseEntity.ok(curso);
@@ -87,7 +87,7 @@ public class CursoController {
         return ResponseEntity.ok(o);
 
     }
-    @PostMapping("/eliminar-usuario/{cursoId}")
+    @DeleteMapping("/eliminar-usuario/{cursoId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<?> eliminnrUsuario(@RequestBody Usuario usuario, @PathVariable Long cursoId){
         Optional<Usuario> o ;

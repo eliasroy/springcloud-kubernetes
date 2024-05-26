@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "msvc-usuarios",url = "localhost:8001")
 public interface UsuarioClientRest {
 
-    @GetMapping("/usuarios/{id}")
+    @GetMapping("/usuario/{id}")
     Usuario detalle(@PathVariable Long id);
 
     @PostMapping("/usuario")

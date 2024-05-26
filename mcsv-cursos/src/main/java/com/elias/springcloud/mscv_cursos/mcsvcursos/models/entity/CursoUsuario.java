@@ -19,13 +19,24 @@ public class CursoUsuario {
     @Column(name = "usuario_id",unique = true)
     private Long usuarioId;
 
+   /**
+    *  @Override
+    *     public boolean equals(Object o) {
+    *         if (this == o) return true;
+    *         if (o == null || getClass() != o.getClass()) return false;
+    *         CursoUsuario that = (CursoUsuario) o;
+    *         return Objects.equals(id, that.id) && Objects.equals(usuarioId, that.usuarioId);
+    *     }
+    * **/
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CursoUsuario that = (CursoUsuario) o;
-        return Objects.equals(id, that.id) && Objects.equals(usuarioId, that.usuarioId);
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof CursoUsuario)) return false;
+        else
+        {
+            CursoUsuario cu = (CursoUsuario) obj;
+            return (cu.usuarioId != null && this.usuarioId.equals(cu.usuarioId));
+        }
     }
-
 
 }
