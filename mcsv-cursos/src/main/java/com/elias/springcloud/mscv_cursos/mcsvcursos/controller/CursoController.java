@@ -25,7 +25,7 @@ public class CursoController {
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Optional<Curso>> detalle(@PathVariable Long id){
-        Optional<Curso> curso = service.porId(id);
+        Optional<Curso> curso = service.porIdconUsuario(id);
         if(curso.isPresent())
             return ResponseEntity.ok(curso);
         return ResponseEntity.notFound().build();
@@ -101,6 +101,13 @@ public class CursoController {
         }
         return ResponseEntity.ok(o);
 
+    }
+
+
+    @DeleteMapping("/eliminar-curso-usuario/{id}")
+    public ResponseEntity<?> eliminarCursoUsuarioPorId(@PathVariable Long id){
+        service.eliminarCursoUsuarioporId(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

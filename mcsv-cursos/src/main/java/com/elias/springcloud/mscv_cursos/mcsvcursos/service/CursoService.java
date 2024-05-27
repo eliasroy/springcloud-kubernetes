@@ -45,6 +45,28 @@ public class CursoService implements ICursoService{
 
     @Override
     @Transactional
+    public void eliminarCursoUsuarioporId(Long id) {
+        repository.eliminarCursoUsuarioPorId(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<Curso> porIdconUsuario(Long idCurso) {
+        Optional<Curso> cursos = repository.findById(idCurso);
+        if(cursos.isPresent()){
+           if (!cursos.get().getCursoUsuarios().isEmpty()){
+               List<Long> ids=cursos.get().getCursoUsuarios().stream().map(cu->cu.getUsuarioId()).toList();
+               List<Usuario> usuarioMcsrv= (List<Usuario>) client.obtenerAlumnosPorCurso(ids);
+              Curso curso=cursos.get();
+              curso.setUsuarios(usuarioMcsrv);
+               return Optional.of(curso);
+           }
+        }
+        return Optional.empty();
+    }
+
+    @Override
+    @Transactional
     public Optional<Usuario> asignarUsuario(Usuario usuario, Long cursoId) {
 
         Optional<Curso> cursos = repository.findById(cursoId);
