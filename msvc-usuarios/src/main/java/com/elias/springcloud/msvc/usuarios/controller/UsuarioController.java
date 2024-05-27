@@ -68,5 +68,9 @@ public class UsuarioController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/usuarios-por-curso")
+    public ResponseEntity<?> obtenerAlumnosPorCurso(@RequestParam List<Long> ids){
+        return ResponseEntity.ok(service.listarPorIds(ids));
+    }
 
 }
