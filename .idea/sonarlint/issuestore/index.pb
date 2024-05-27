@@ -15,14 +15,10 @@ cmsvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/repositories/Us
 _msvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/service/UsuarioServiceImpl.java,e\3\e37188db7a244a2fc8d8ee48192f8603ec5e13fa
 ë
 amsvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/controller/UsuarioController.java,5\1\512f79745404ffa6e72edd9cf76605d2f8e0adc4
-P
- msvc-usuarios/docker-compose.yml,5\3\53d43cf0a9e97ebc1994720cf6db15cddaccc962
 ë
 amcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/McsvCursosApplication.java,9\1\9115cffe225b84ec9f2941e4b8ce2bd115844441
 C
 mcsv-cursos/pom.xml,4\1\41dfe185435a898c471db556a41f23dd5e79df36
-à
-Xmcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/entity/Curso.java,f\1\f12fd7b37fc71049752eb2507174b9ae0bce3938
 ñ
 fmcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/repository/CursoRepository.java,4\c\4cab6e96fb6691ae4aa039798414f90b34f4ebd6
 ë
@@ -31,3 +27,15 @@ amcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/service/
 `mcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/service/CursoService.java,9\e\9ec4f99be6de798ea065b0c7a65ce77a6b88b9ce
 ñ
 fmcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/controller/CursoController.java,2\b\2b9390d0310d965d037e291e66107f831e3a22d4
+ï
+emcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/clients/UsuarioClientRest.java,2\8\2871f09681026dbf70da24c4a97c3fcd35007a85
+ä
+Zmcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/models/Usuario.java,3\b\3b04f462ec489147180c6b38aeb1840bc177082c
+è
+_mcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/models/entity/Curso.java,1\9\192183004b321f2400591347b4d272390f4d55a6
+ñ
+fmcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/models/entity/CursoUsuario.java,f\a\fa2bf7db7afb0f25669606e5c2cb3a9eabf11806
+B
+docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
+ç
+]msvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/cllients/CursoClientRest.java,e\2\e2eb85b34855127ec672dd2c5c1924743bd76bfe
