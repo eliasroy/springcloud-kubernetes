@@ -39,3 +39,5 @@ B
 docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
 ç
 ]msvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/cllients/CursoClientRest.java,e\2\e2eb85b34855127ec672dd2c5c1924743bd76bfe
+H
+msvc-usuarios/Dockerfile,d\e\de40dde59f25d8bcce2561fd6e1df3af43f1c2ba
