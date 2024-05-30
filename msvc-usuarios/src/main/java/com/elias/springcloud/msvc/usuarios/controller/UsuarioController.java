@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -24,8 +26,8 @@ public class UsuarioController {
 
     @GetMapping("/listar")
     @ResponseStatus(HttpStatus.OK)
-    public List<Usuario> listar(){
-        return service.listar();
+    public Map<String,List<Usuario>> listar(){
+        return Collections.singletonMap("usuarios",service.listar());
     }
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
