@@ -1,9 +1,40 @@
-FROM openjdk:23-ea-17-jdk-bullseye
+# Etapa de construcción
+FROM openjdk:17-jdk-alpine as builder
 
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /app/msvc-usuarios
+
+# Copia el archivo pom.xml a la carpeta /app
+COPY ./pom.xml /app
+
+# Copia el directorio .mvn y el archivo mvnw al directorio de trabajo actual
+COPY ./msvc-usuarios/.mvn ./.mvn
+COPY ./msvc-usuarios/mvnw .
+COPY ./msvc-usuarios/pom.xml .
+
+# Ejecuta el comando de Maven para limpiar y empaquetar el proyecto, omitiendo pruebas, empaquetado principal y el reempaquetado de Spring Boot. Luego, elimina la carpeta target.
+RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm -r ./target/
+
+# Opción comentada para descargar dependencias sin conexión (no ejecutada actualmente)
+#RUN ./mvnw dependency:go-offline
+
+# Copia el directorio src al directorio de trabajo actual
+COPY ./msvc-usuarios/src ./src
+
+# Ejecuta el comando de Maven para limpiar y empaquetar el proyecto, omitiendo las pruebas.
+RUN ./mvnw clean package -DskipTests
+
+# Etapa de despliegue
+FROM openjdk:17-jdk-alpine
+
+# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-COPY ./target/msvc-usuarios-0.0.1-SNAPSHOT.jar .
+# Copia el archivo JAR generado desde la etapa de construcción
+COPY --from=builder /app/msvc-usuarios/target/msvc-usuarios-0.0.1-SNAPSHOT.jar .
 
+# Expone el puerto 8001 para que la aplicación pueda ser accesible
 EXPOSE 8001
 
-ENTRYPOINT ["java","-jar","msvc-usuarios-0.0.1-SNAPSHOT.jar"]
+# Define el comando de inicio para ejecutar el archivo JAR
+ENTRYPOINT ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
