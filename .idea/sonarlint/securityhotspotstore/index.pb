@@ -41,3 +41,5 @@ B
 ]msvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/cllients/CursoClientRest.java,e\2\e2eb85b34855127ec672dd2c5c1924743bd76bfe
 H
 msvc-usuarios/Dockerfile,d\e\de40dde59f25d8bcce2561fd6e1df3af43f1c2ba
+‘
+amsvc-usuarios/src/test/java/com/elias/springcloud/msvc/usuarios/MsvcUsuariosApplicationTests.java,d\4\d41006d6209aead335bf9376f5dc16c39a138b8f
