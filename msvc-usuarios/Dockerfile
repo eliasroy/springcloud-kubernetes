@@ -38,3 +38,18 @@ EXPOSE 8001
 
 # Define el comando de inicio para ejecutar el archivo JAR
 ENTRYPOINT ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
+
+
+
+# COMANDOS DOCKER:
+# docker --help : Muestra la ayuda para el comando Docker
+# docker ps : Muestra las imágenes que están corriendo
+# docker ps -a : Muestra todas las imágenes, incluyendo las detenidas
+# docker start "nombre o id" : Inicia un contenedor detenido
+# docker run -p 8081:8001 "nombre" : Ejecuta un contenedor con puerto mapeado
+# docker run -d -p 8081:8001 "nombre" : Ejecuta un contenedor en modo detached
+# docker attach "nombre" : Adjunta la consola a un contenedor
+# docker stop "id o nombre" : Detiene un contenedor en ejecución
+# docker logs "nombre usuario" : Muestra los logs de un contenedor
+# docker logs -f "nombre" : Muestra los logs en tiempo real
+# docker start -a "nombre" : Inicia un contenedor con la consola adjunta
