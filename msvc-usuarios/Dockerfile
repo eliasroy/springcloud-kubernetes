@@ -63,3 +63,8 @@ ENTRYPOINT ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
     # docker rmi "id" : Elimina una imagen especificada por su ID
     # docker "id" "id" ... : Elimina varias imágenes especificadas por sus IDs
     # docker image prune : Elimina imágenes que no están en uso
+
+# COMANDOS PARA ELIMINAR CONTENEDORES DETENIDOS:
+# - docker ps -a : Muestra una lista de todos los contenedores en el sistema, incluyendo los detenidos.
+# - docker run -p 8001:8001 -d --rm "nombre" : Crea y ejecuta un contenedor a partir de una imagen especificada por "nombre", mapeando el puerto 8001 del contenedor al puerto 8001 del host (-p 8001:8001), ejecutándolo en segundo plano (-d) y eliminándolo automáticamente cuando se detiene (--rm).
+# - docker stop "id" : Detiene un contenedor en ejecución especificado por su ID.
