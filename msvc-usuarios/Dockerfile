@@ -53,3 +53,13 @@ ENTRYPOINT ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
 # docker logs "nombre usuario" : Muestra los logs de un contenedor
 # docker logs -f "nombre" : Muestra los logs en tiempo real
 # docker start -a "nombre" : Inicia un contenedor con la consola adjunta
+# COMANDOS DOCKER PARA ELIMINAR CONTENEDORES DETENIDOS:
+    # docker rm "id o nombre" : Elimina un contenedor detenido especificado por su ID o nombre
+    # docker rm "nombre" "nombre" ... : Elimina varios contenedores detenidos especificados por sus nombres
+    # docker container prune : Elimina todos los contenedores detenidos
+
+# Otros comandos útiles:
+    # docker images : Lista las imágenes en el sistema
+    # docker rmi "id" : Elimina una imagen especificada por su ID
+    # docker "id" "id" ... : Elimina varias imágenes especificadas por sus IDs
+    # docker image prune : Elimina imágenes que no están en uso
