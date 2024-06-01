@@ -37,7 +37,7 @@ COPY --from=builder /app/msvc-usuarios/target/msvc-usuarios-0.0.1-SNAPSHOT.jar .
 EXPOSE 8001
 
 # Define el comando de inicio para ejecutar el archivo JAR
-ENTRYPOINT ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
 
 
 
@@ -68,3 +68,11 @@ ENTRYPOINT ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
 # - docker ps -a : Muestra una lista de todos los contenedores en el sistema, incluyendo los detenidos.
 # - docker run -p 8001:8001 -d --rm "nombre" : Crea y ejecuta un contenedor a partir de una imagen especificada por "nombre", mapeando el puerto 8001 del contenedor al puerto 8001 del host (-p 8001:8001), ejecutándolo en segundo plano (-d) y eliminándolo automáticamente cuando se detiene (--rm).
 # - docker stop "id" : Detiene un contenedor en ejecución especificado por su ID.
+
+# MODO INTERACTIVO:
+    # - docker run -p 8001:8001 --rm -it usuarios /bin/sh : Crea y ejecuta un contenedor de forma interactiva a partir de la imagen "usuarios", mapeando el puerto 8001 del contenedor al puerto 8001 del host, eliminando el contenedor automáticamente cuando se detiene (--rm), y abriendo una sesión de shell interactiva (/bin/sh).
+    # - Se cambia ENTRYPOINT por CMD : En el Dockerfile, ENTRYPOINT se utiliza para definir el comando que se ejecutará cuando el contenedor se inicie. CMD se puede utilizar para proporcionar parámetros predeterminados a ENTRYPOINT o para ejecutar un comando específico si no se define ENTRYPOINT.
+    # - docker stop ee : Detiene el contenedor con el nombre o ID "ee".
+    # - docker run -p 8001:8001 --rm -it usuarios /bin/sh : (Repetido) Crea y ejecuta un contenedor de forma interactiva a partir de la imagen "usuarios", mapeando el puerto 8001 del contenedor al puerto 8001 del host, eliminando el contenedor automáticamente cuando se detiene, y abriendo una sesión de shell interactiva.
+    # - Nos encontramos en consola : Estando dentro del contenedor en modo interactivo.
+    # - java -jar mscv-usuarios-0.1.1-SNAPSHOT.jar : Ejecuta una aplicación Java especificada por el archivo JAR "mscv-usuarios-0.1.1-SNAPSHOT.jar" dentro del contenedor.
