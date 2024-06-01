@@ -76,3 +76,10 @@ CMD ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
     # - docker run -p 8001:8001 --rm -it usuarios /bin/sh : (Repetido) Crea y ejecuta un contenedor de forma interactiva a partir de la imagen "usuarios", mapeando el puerto 8001 del contenedor al puerto 8001 del host, eliminando el contenedor automáticamente cuando se detiene, y abriendo una sesión de shell interactiva.
     # - Nos encontramos en consola : Estando dentro del contenedor en modo interactivo.
     # - java -jar mscv-usuarios-0.1.1-SNAPSHOT.jar : Ejecuta una aplicación Java especificada por el archivo JAR "mscv-usuarios-0.1.1-SNAPSHOT.jar" dentro del contenedor.
+# COMANDOS PARA COPIAR ARCHIVOS Y COMPILAR/EXECUTAR JAVA EN UN CONTENEDOR:
+    # - cd .. : Cambia al directorio padre en el sistema de archivos del host.
+    # - ls : Lista los archivos y directorios en el directorio actual en el sistema de archivos del host.
+    # - docker cp ./Login.java "container_id":/app/Login.java : Copia el archivo Login.java desde el host al directorio /app del contenedor especificado por su ID.
+    # - javac Login.java : Compila el archivo Login.java en el contenedor, generando el archivo Login.class.
+    # - java Login : Ejecuta el archivo compilado Login.class en el contenedor.
+    # - docker cp "container_id":/app/Login.java ./Login2.java : Copia el archivo Login.java desde el contenedor al host, renombrándolo como Login2.java.
