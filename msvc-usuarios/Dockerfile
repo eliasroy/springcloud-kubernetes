@@ -88,3 +88,7 @@ CMD ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
 # COMANDOS PARA COPIAR LOGS Y EDITARLOS:
     # - docker cp "id_contenedor":/app/logs ./logs : Copia el directorio de logs desde el contenedor especificado por su ID a un directorio llamado logs en tu máquina host.
     # - vim ./logs/spring.log : Abre el archivo de log spring.log con el editor vim desde la ubicación donde copiaste los logs.
+
+# COMANDOS PARA INSPECCIONAR IMÁGENES Y CONTENEDORES:
+    # - docker images inspect "id" : Proporciona información detallada sobre una imagen Docker especificada por su ID. Incluye detalles sobre la configuración de la imagen, las capas, las etiquetas, etc.
+    # - docker container inspect "id" : Proporciona información detallada sobre un contenedor Docker especificado por su ID. Incluye detalles sobre la configuración del contenedor, los volúmenes montados, las variables de entorno, el estado actual, etc.
