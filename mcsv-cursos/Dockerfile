@@ -104,3 +104,18 @@ CMD ["java", "-jar", "mcsv-cursos-0.0.1-SNAPSHOT.jar"]
     # Construcción de la imagen del servicio de usuarios:
     # docker build -t usuarios . -f .\msvc-usuarios\Dockerfile
     # - Similar al comando anterior, pero construye una imagen etiquetada como 'usuarios' usando el Dockerfile ubicado en .\msvc-usuarios\Dockerfile.
+
+
+# Ejecución del contenedor del servicio de usuarios:
+    # docker run -p 8001:8001 -d --rm --name msvc-usuarios --network spring usuarios
+        # - docker run: Ejecuta un contenedor basado en una imagen de Docker.
+        # - -p 8001:8001: Mapea el puerto 8001 del host al puerto 8001 del contenedor.
+        # - -d: Ejecuta el contenedor en segundo plano (modo "detached").
+        # - --rm: Elimina el contenedor automáticamente cuando se detiene.
+        # - --name msvc-usuarios: Asigna el nombre 'msvc-usuarios' al contenedor.
+        # - --network spring: Conecta el contenedor a la red Docker llamada 'spring'.
+        # - usuarios: Utiliza la imagen etiquetada como 'usuarios'.
+
+    # Ejecución del contenedor del servicio de cursos:
+        # docker run -p 8002:8002 -d --rm --name mcsv-cursos --network spring cursos
+        # - Similar al comando anterior, pero ejecuta el contenedor basado en la imagen 'cursos' y mapea el puerto 8002.
