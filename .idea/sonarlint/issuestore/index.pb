@@ -45,3 +45,5 @@ H
 amsvc-usuarios/src/test/java/com/elias/springcloud/msvc/usuarios/MsvcUsuariosApplicationTests.java,d\4\d41006d6209aead335bf9376f5dc16c39a138b8f
 F
 mcsv-cursos/Dockerfile,e\0\e01141ef0bc957fb5cc30c208ad692cb29d5bd97
+H
+mcsv-cursos/settings.xml,1\f\1fc7fb0c6e5938b0b89dbd04de1c047f3ba191e9
