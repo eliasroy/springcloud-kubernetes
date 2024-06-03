@@ -92,3 +92,15 @@ CMD ["java", "-jar", "mcsv-cursos-0.0.1-SNAPSHOT.jar"]
 # COMANDOS PARA INSPECCIONAR IMÁGENES Y CONTENEDORES:
     # - docker images inspect "id" : Proporciona información detallada sobre una imagen Docker especificada por su ID. Incluye detalles sobre la configuración de la imagen, las capas, las etiquetas, etc.
     # - docker container inspect "id" : Proporciona información detallada sobre un contenedor Docker especificado por su ID. Incluye detalles sobre la configuración del contenedor, los volúmenes montados, las variables de entorno, el estado actual, etc.
+
+
+# Construcción de la imagen del servicio de cursos:
+    # docker build -t cursos . -f .\mcsv-cursos\Dockerfile
+        # - docker build: Construye una imagen de Docker a partir de un Dockerfile.
+        # - -t cursos: Etiqueta la imagen con el nombre 'cursos'.
+        # - .: Indica el directorio actual como contexto de construcción.
+        # - -f .\mcsv-cursos\Dockerfile: Especifica la ruta al Dockerfile que se usará para construir la imagen.
+
+    # Construcción de la imagen del servicio de usuarios:
+    # docker build -t usuarios . -f .\msvc-usuarios\Dockerfile
+    # - Similar al comando anterior, pero construye una imagen etiquetada como 'usuarios' usando el Dockerfile ubicado en .\msvc-usuarios\Dockerfile.
