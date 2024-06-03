@@ -43,3 +43,5 @@ H
 msvc-usuarios/Dockerfile,d\e\de40dde59f25d8bcce2561fd6e1df3af43f1c2ba
 ‘
 amsvc-usuarios/src/test/java/com/elias/springcloud/msvc/usuarios/MsvcUsuariosApplicationTests.java,d\4\d41006d6209aead335bf9376f5dc16c39a138b8f
+F
+mcsv-cursos/Dockerfile,e\0\e01141ef0bc957fb5cc30c208ad692cb29d5bd97
