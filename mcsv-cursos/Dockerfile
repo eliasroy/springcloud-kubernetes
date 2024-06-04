@@ -125,6 +125,15 @@ CMD ["java", "-jar", "mcsv-cursos-0.0.1-SNAPSHOT.jar"]
 # a continuación, pero te proporcionará una guía comentada sobre cómo ejecutar
 # los comandos en la línea de comandos para dockerizar MySQL.
 
+
+
+
+
+
+
+
+
+# DOCKERIZACION DE BASE DE DATOS
 # Paso 1: Descargar la imagen de MySQL versión 8
 # Comando:
     # docker pull mysql:8
@@ -133,7 +142,7 @@ CMD ["java", "-jar", "mcsv-cursos-0.0.1-SNAPSHOT.jar"]
 
 # Paso 2: Ejecutar un contenedor de MySQL en segundo plano
 # Comando:
-    # docker run -d -p 3307:3306 --name mysql8 --network spring -e MYSQL_ROOT_PASSWORD=sasa -e MYSQL_DATABASE=msvc_usuarios mysql:8
+    # docker run -d -p 3307:3306 --name mysql8 --network spring -e MYSQL_ROOT_PASSWORD=sasa -e MYSQL_DATABASE=msvc-usuarios mysql:8
     # - docker run: Ejecuta un contenedor basado en una imagen de Docker.
     # - -d: Ejecuta el contenedor en segundo plano (modo "detached").
     # - -p 3307:3306: Mapea el puerto 3307 del host al puerto 3306 del contenedor (puerto por defecto de MySQL).
@@ -158,3 +167,29 @@ CMD ["java", "-jar", "mcsv-cursos-0.0.1-SNAPSHOT.jar"]
 #-e POSTGRES_DB=mscv_cursos: Crea una base de datos llamada mscv_cursos en PostgreSQL.
 #-d: Ejecuta el contenedor en segundo plano (modo "detached").
 #postgres:14-alpine: Utiliza la imagen de PostgreSQL versión 14 en Alpine Linux.
+
+#VOLUMENES:
+# docker run -d -p 3307:3306 --name mysql8 --network spring -e MYSQL_ROOT_PASSWORD=sasa -e MYSQL_DATABASE=msvc-usuarios -v data-mysql:/var/lib/mysql --restart=always mysql:8
+#docker run -p 5432:5432 --name postgres14 --network spring -e POSTGRES_PASSWORD=sas -e POSTGRES_DB=mscv_cursos -d -v data-postgres:/var/lib/postgresql/data --restart=always postgres:14-alpine
+
+# docker volume ps
+
+#ACCEDER ALA BASE DE DATOS
+# Accede al contenedor de MySQL de forma interactiva y elimínalo al detenerlo
+#docker run -it --rm --network spring mysql:8 bash
+
+# Conecta a MySQL usando el cliente de MySQL con la dirección IP del contenedor (-hmysql8), el usuario root (-uroot) y solicita la contraseña (-p)
+#mysql -hmysql8 -uroot -p
+
+
+# Accede al contenedor de PostgreSQL de forma interactiva y elimínalo al detenerlo
+#docker run -it --rm --network spring postgres:14-alpine psql -h postgres14 -U postgres
+
+# Una vez dentro de PostgreSQL, cambia a la base de datos 'mscv_cursos'
+# \c mscv_cursos;
+
+# Muestra la lista de tablas en la base de datos actual
+# \dt;
+
+# Muestra la estructura de la tabla 'cursos'
+# \d+ cursos;
