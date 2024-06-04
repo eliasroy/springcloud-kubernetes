@@ -33,8 +33,9 @@ RUN mkdir ./logs
 # Copia el archivo JAR generado desde la etapa de construcción
 COPY --from=builder /app/msvc-usuarios/target/msvc-usuarios-0.0.1-SNAPSHOT.jar .
 
+ENV PORT 8081
 # Expone el puerto 8001 para que la aplicación pueda ser accesible
-EXPOSE 8001
+EXPOSE $PORT
 
 # Define el comando de inicio para ejecutar el archivo JAR
 CMD ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
