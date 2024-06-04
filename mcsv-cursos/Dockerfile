@@ -148,3 +148,13 @@ CMD ["java", "-jar", "mcsv-cursos-0.0.1-SNAPSHOT.jar"]
     # docker logs mysql8
     # - docker logs: Muestra los logs de un contenedor en ejecución.
     # - mysql8: Nombre del contenedor cuyos logs queremos ver.
+
+#docker run -p 5432:5432 --name postgres14 --network spring -e POSTGRES_PASSWORD=sas -e POSTGRES_DB=mscv_cursos -d postgres:14-alpine
+#docker run: Ejecuta un contenedor basado en una imagen de Docker.
+#-p 5432:5432: Mapea el puerto 5432 del host al puerto 5432 del contenedor (puerto por defecto de PostgreSQL).
+#--name postgres14: Asigna el nombre postgres14 al contenedor.
+#--network spring: Conecta el contenedor a la red Docker llamada spring.
+#-e POSTGRES_PASSWORD=sas: Establece la contraseña del usuario postgres a sas.
+#-e POSTGRES_DB=mscv_cursos: Crea una base de datos llamada mscv_cursos en PostgreSQL.
+#-d: Ejecuta el contenedor en segundo plano (modo "detached").
+#postgres:14-alpine: Utiliza la imagen de PostgreSQL versión 14 en Alpine Linux.
