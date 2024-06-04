@@ -56,7 +56,7 @@ CMD ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
     # --name msvc-usuarios: Asigna el nombre 'msvc-usuarios' al contenedor.
     # --network spring: Conecta el contenedor a la red 'spring'.
     # usuarios: Nombre de la imagen Docker a utilizar para crear el contenedor.
-    
+
 #docker run -p 8082:8090 --env PORT=8090 -d --rm --name msvc-usuarios --network spring usuarios
 
     # docker run: Comando para ejecutar un contenedor Docker.
@@ -68,6 +68,17 @@ CMD ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
     # --network spring: Conecta el contenedor a la red 'spring'.
     # usuarios: Nombre de la imagen Docker a utilizar para crear el contenedor.
 
+# docker run -p 8082:8090 --env PORT=8091 --env-file .\msvc-usuarios\.env -d --rm --name msvc-usuarios --network spring usuarios
+
+    # docker run: Comando para ejecutar un contenedor Docker.
+    # -p 8082:8090: Mapea el puerto 8082 del host al puerto 8090 del contenedor.
+    # --env PORT=8091: Establece la variable de entorno 'PORT' en el contenedor con el valor 8091.
+    # --env-file .\msvc-usuarios\.env: Carga variables de entorno desde el archivo .env ubicado en el directorio 'msvc-usuarios'.
+    # -d: Ejecuta el contenedor en segundo plano (modo detached).
+    # --rm: Elimina automáticamente el contenedor cuando se detiene.
+    # --name msvc-usuarios: Asigna el nombre 'msvc-usuarios' al contenedor.
+    # --network spring: Conecta el contenedor a la red 'spring'.
+    # usuarios: Nombre de la imagen Docker a utilizar para crear el contenedor.
 
 
 # COMANDOS DOCKER:
