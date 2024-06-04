@@ -119,3 +119,32 @@ CMD ["java", "-jar", "mcsv-cursos-0.0.1-SNAPSHOT.jar"]
     # Ejecución del contenedor del servicio de cursos:
         # docker run -p 8002:8002 -d --rm --name mcsv-cursos --network spring cursos
         # - Similar al comando anterior, pero ejecuta el contenedor basado en la imagen 'cursos' y mapea el puerto 8002.
+
+
+# Este archivo Dockerfile no se utiliza directamente para ejecutar los comandos
+# a continuación, pero te proporcionará una guía comentada sobre cómo ejecutar
+# los comandos en la línea de comandos para dockerizar MySQL.
+
+# Paso 1: Descargar la imagen de MySQL versión 8
+# Comando:
+    # docker pull mysql:8
+    # - docker pull: Descarga la imagen especificada desde Docker Hub.
+    # - mysql:8: Especifica la imagen de MySQL versión 8.
+
+# Paso 2: Ejecutar un contenedor de MySQL en segundo plano
+# Comando:
+    # docker run -d -p 3307:3306 --name mysql8 --network spring -e MYSQL_ROOT_PASSWORD=sasa -e MYSQL_DATABASE=msvc_usuarios mysql:8
+    # - docker run: Ejecuta un contenedor basado en una imagen de Docker.
+    # - -d: Ejecuta el contenedor en segundo plano (modo "detached").
+    # - -p 3307:3306: Mapea el puerto 3307 del host al puerto 3306 del contenedor (puerto por defecto de MySQL).
+    # - --name mysql8: Asigna el nombre 'mysql8' al contenedor.
+    # - --network spring: Conecta el contenedor a la red Docker llamada 'spring'.
+    # - -e MYSQL_ROOT_PASSWORD=sasa: Establece la contraseña del usuario root de MySQL a 'sasa'.
+    # - -e MYSQL_DATABASE=msvc_usuarios: Crea una base de datos llamada 'msvc_usuarios' en MySQL.
+    # - mysql:8: Utiliza la imagen de MySQL versión 8.
+
+# Paso 3: Ver los logs del contenedor de MySQL para asegurarse de que se ha iniciado correctamente
+# Comando:
+    # docker logs mysql8
+    # - docker logs: Muestra los logs de un contenedor en ejecución.
+    # - mysql8: Nombre del contenedor cuyos logs queremos ver.
