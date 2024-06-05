@@ -1,16 +1,16 @@
 # Etapa de construcción
 FROM openjdk:17-jdk-alpine as builder
-
+ARG MSVC_NAME=msvc-usuarios
 # Establece el directorio de trabajo dentro del contenedor
-WORKDIR /app/msvc-usuarios
+WORKDIR /app/$MSVC_NAME
 
 # Copia el archivo pom.xml a la carpeta /app
 COPY ./pom.xml /app
 
 # Copia el directorio .mvn y el archivo mvnw al directorio de trabajo actual
-COPY ./msvc-usuarios/.mvn ./.mvn
-COPY ./msvc-usuarios/mvnw .
-COPY ./msvc-usuarios/pom.xml .
+COPY ./$MSVC_NAME/.mvn ./.mvn
+COPY ./$MSVC_NAME/mvnw .
+COPY ./$MSVC_NAME/pom.xml .
 
 # Ejecuta el comando de Maven para limpiar y empaquetar el proyecto, omitiendo pruebas, empaquetado principal y el reempaquetado de Spring Boot. Luego, elimina la carpeta target.
 RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repackage.skip && rm -r ./target/
@@ -19,7 +19,7 @@ RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repac
 #RUN ./mvnw dependency:go-offline
 
 # Copia el directorio src al directorio de trabajo actual
-COPY ./msvc-usuarios/src ./src
+COPY ./$MSVC_NAME/src ./src
 
 # Ejecuta el comando de Maven para limpiar y empaquetar el proyecto, omitiendo las pruebas.
 RUN ./mvnw clean package -DskipTests
@@ -30,10 +30,12 @@ FROM openjdk:17-jdk-alpine
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 RUN mkdir ./logs
+ARG MSVC_NAME=msvc-usuarios
+ARG TARGET_FOLDER=/app/$MSVC_NAME/target
 # Copia el archivo JAR generado desde la etapa de construcción
-COPY --from=builder /app/msvc-usuarios/target/msvc-usuarios-0.0.1-SNAPSHOT.jar .
-
-ENV PORT 8081
+COPY --from=builder $TARGET_FOLDER/msvc-usuarios-0.0.1-SNAPSHOT.jar .
+ARG PORT_APP=8001
+ENV PORT $PORT_APP
 # Expone el puerto 8001 para que la aplicación pueda ser accesible
 EXPOSE $PORT
 
@@ -79,6 +81,16 @@ CMD ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
     # --name msvc-usuarios: Asigna el nombre 'msvc-usuarios' al contenedor.
     # --network spring: Conecta el contenedor a la red 'spring'.
     # usuarios: Nombre de la imagen Docker a utilizar para crear el contenedor.
+
+#ARGS sobreescribir
+# docker build -t usuarios . -f .\msvc-usuarios\Dockerfile --build-arg PORT_APP=8080
+
+# docker build: Comando para construir una imagen Docker.
+# -t usuarios: Etiqueta la imagen con el nombre 'usuarios'.
+# . : Define el contexto de construcción como el directorio actual.
+# -f .\msvc-usuarios\Dockerfile: Especifica la ruta del Dockerfile a utilizar, que en este caso se encuentra en el directorio 'msvc-usuarios'.
+# --build-arg PORT_APP=8080: Proporciona un argumento de construcción llamado 'PORT_APP' con el valor 8080. Este argumento puede ser utilizado dentro del Dockerfile.
+
 
 
 # COMANDOS DOCKER:
