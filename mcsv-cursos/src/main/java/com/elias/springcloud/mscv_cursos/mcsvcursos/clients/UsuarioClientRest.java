@@ -4,7 +4,7 @@ import com.elias.springcloud.mscv_cursos.mcsvcursos.models.Usuario;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "msvc-usuarios",url = "msvc-usuarios:8001")
+@FeignClient(name = "msvc-usuarios",url = "${mscv.usuarios.url}")
 public interface UsuarioClientRest {
 
     @GetMapping("/usuario/{id}")
