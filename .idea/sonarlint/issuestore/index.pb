@@ -47,3 +47,7 @@ F
 mcsv-cursos/Dockerfile,e\0\e01141ef0bc957fb5cc30c208ad692cb29d5bd97
 H
 mcsv-cursos/settings.xml,1\f\1fc7fb0c6e5938b0b89dbd04de1c047f3ba191e9
+B
+msvc-usuarios/.env,0\4\0469e942a4e8d7af4a5b9965c5e065884065c795
+@
+mcsv-cursos/.env,e\a\ea85d2d5013ac4c709c6987cb860bdf8b875599a
