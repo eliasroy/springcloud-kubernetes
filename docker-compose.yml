@@ -1,31 +1,56 @@
-version: '3'
+version: '3,9'
 services:
-  db-usuarios:
-    container_name: db-usuarios
-    image: mysql:8.0.33
-    restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: msvc-usuarios
-      MYSQL_USER: elias
-      MYSQL_PASSWORD: elias
-      MYSQL_ROOT_PASSWORD: root
+  mysql8:
+    image: mysql:8
     ports:
       - "3306:3306"
-    expose:
-      - "3306"
-  db-cursos:
-    container_name: db-cursos
-    image: postgres:15.2
-    restart: unless-stopped
     environment:
-      POSTGRES_DB: ms_cursos
-      POSTGRES_USER: elias
-      POSTGRES_PASSWORD: elias
+      MYSQL_ROOT_PASSWORD: sasa
+      MYSQL_DATABASE: msvc_usuarios
+    volumes:
+      - data-mysql:/var/lib/mysql
+    restart: always
+    networks:
+      - spring
+
+
+
+  postgres14:
+    image: postgres:14-alpine
     ports:
-      - 5431:5431
-    expose:
-      - 5431
-    command: -p 5431
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: sas
+      postgres_db: mscv_cursos
+    volumes:
+      - data-postgres:/var/lib/postgresql/data
+    networks:
+      - spring
+
+  msvc-usuarios:
+    image: usuarios
+    ports:
+      - "8001:8001"
+    env_file: ./msvc-usuarios/.env
+    networks:
+      - spring
+    depends_on:
+      - mysql8
+    restart: always
+
+
+  mcsv-cursos:
+    image: cursos
+    ports:
+      - "8002:8002"
+    env_file: ./mcsv-cursos/.env
+    networks:
+      - spring
+    depends_on:
+      - postgres14
+    restart: always
+
+
 
   pgadmin:
     image: dpage/pgadmin4
@@ -36,3 +61,10 @@ services:
       - "80:80"
     depends_on:
       - db-cursos
+
+volumes:
+  data-mysql:
+  data-postgres:
+
+networks:
+  spring:
