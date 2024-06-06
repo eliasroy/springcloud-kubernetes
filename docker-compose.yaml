@@ -8,8 +8,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: sasa
       MYSQL_DATABASE: msvc_usuarios
-    volumes:
-      - data-mysql:/var/lib/mysql
+
     restart: always
     networks:
       - spring
@@ -34,9 +33,10 @@ services:
 
   msvc-usuarios:
     container_name: msvc-usuarios
-    build:
-      context: ./
-      dockerfile: ./msvc-usuarios/Dockerfile
+    image: eliasroy/usuarios
+    #build:
+    #  context: ./
+     # dockerfile: ./msvc-usuarios/Dockerfile
     ports:
       - "8001:8001"
     env_file: ./msvc-usuarios/.env
@@ -49,9 +49,10 @@ services:
 
   mcsv-cursos:
     container_name: mcsv-cursos
-    build:
-      context: ./
-      dockerfile: ./mcsv-cursos/Dockerfile
+    image: eliasroy/cursos
+      #build:
+      #context: ./
+    #dockerfile: ./mcsv-cursos/Dockerfile
     ports:
       - "8002:8002"
     env_file: ./mcsv-cursos/.env
