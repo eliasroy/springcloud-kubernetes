@@ -35,8 +35,6 @@ Zmcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/models/U
 _mcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/models/entity/Curso.java,1\9\192183004b321f2400591347b4d272390f4d55a6
 ñ
 fmcsv-cursos/src/main/java/com/elias/springcloud/mscv_cursos/mcsvcursos/models/entity/CursoUsuario.java,f\a\fa2bf7db7afb0f25669606e5c2cb3a9eabf11806
-B
-docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
 ç
 ]msvc-usuarios/src/main/java/com/elias/springcloud/msvc/usuarios/cllients/CursoClientRest.java,e\2\e2eb85b34855127ec672dd2c5c1924743bd76bfe
 H
