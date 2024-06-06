@@ -51,3 +51,5 @@ B
 msvc-usuarios/.env,0\4\0469e942a4e8d7af4a5b9965c5e065884065c795
 @
 mcsv-cursos/.env,e\a\ea85d2d5013ac4c709c6987cb860bdf8b875599a
+C
+docker-compose.yaml,e\f\ef8def03dc8f162799089e9b5f4321201c8810d5
