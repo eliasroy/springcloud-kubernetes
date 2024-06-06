@@ -1,6 +1,7 @@
 version: '3,9'
 services:
   mysql8:
+    container_name: mysql8
     image: mysql:8
     ports:
       - "3306:3306"
@@ -16,19 +17,26 @@ services:
 
 
   postgres14:
+    container_name: postgres14
     image: postgres:14-alpine
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: sas
-      postgres_db: mscv_cursos
+      POSTGRES_DB: mscv_cursos
+      POSTGRES_USER: elias
+      POSTGRES_PASSWORD: elias
     volumes:
       - data-postgres:/var/lib/postgresql/data
     networks:
       - spring
+    expose:
+      - 5432
 
   msvc-usuarios:
-    image: usuarios
+    container_name: msvc-usuarios
+    build:
+      context: ./
+      dockerfile: ./msvc-usuarios/Dockerfile
     ports:
       - "8001:8001"
     env_file: ./msvc-usuarios/.env
@@ -40,19 +48,22 @@ services:
 
 
   mcsv-cursos:
-    image: cursos
+    container_name: mcsv-cursos
+    build:
+      context: ./
+      dockerfile: ./mcsv-cursos/Dockerfile
     ports:
       - "8002:8002"
     env_file: ./mcsv-cursos/.env
     networks:
       - spring
-    depends_on:
-      - postgres14
+
     restart: always
 
 
 
   pgadmin:
+    container_name: pgadmin
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: "elias@elias.com"
@@ -60,11 +71,13 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - db-cursos
+      - postgres14
 
 volumes:
   data-mysql:
+    name: "data-mysql"
   data-postgres:
+    name: "data-postgres"
 
 networks:
   spring:
