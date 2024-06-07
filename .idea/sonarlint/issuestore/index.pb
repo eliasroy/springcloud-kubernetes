@@ -51,3 +51,7 @@ B
 mcsv-cursos/.env,e\a\ea85d2d5013ac4c709c6987cb860bdf8b875599a
 C
 docker-compose.yaml,e\f\ef8def03dc8f162799089e9b5f4321201c8810d5
+I
+docker-compose-cursos.yml,7\b\7b7a0eefe5411bccfb0fa27c89bde066d629ec9d
+K
+docker-compose-usuarios.yml,2\4\24b87bb5517279f33b0e30716a8e4a3a0446d172
