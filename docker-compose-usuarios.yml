@@ -1,0 +1,47 @@
+version: '3,9'
+services:
+  mysql8:
+    container_name: mysql8
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: sasa
+      MYSQL_DATABASE: msvc_usuarios
+
+    restart: always
+    networks:
+      - spring
+
+
+
+  msvc-usuarios:
+    container_name: msvc-usuarios
+    image: eliasroy/usuarios
+      #build:
+      #  context: ./
+    # dockerfile: ./msvc-usuarios/Dockerfile
+    ports:
+      - "8001:8001"
+    environment:
+      PORT: 8001
+      BD_HOST: mysql8:3306
+      BS_DATABASE: msvc_usuarios
+      DB_USERNAME: root
+      DB_PASSWORD: sasa
+      CURSOS_URL: ec2-3-88-138-6.compute-1.amazonaws.com:8002
+    networks:
+      - spring
+    depends_on:
+      - mysql8
+    restart: always
+
+
+
+
+volumes:
+  data-mysql:
+    name: "data-mysql"
+
+networks:
+  spring:

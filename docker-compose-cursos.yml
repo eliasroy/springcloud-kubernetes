@@ -1,0 +1,49 @@
+version: '3,9'
+services:
+
+  postgres14:
+    container_name: postgres14
+    image: postgres:14-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: mscv_cursos
+      POSTGRES_USER: elias
+      POSTGRES_PASSWORD: elias
+    volumes:
+      - data-postgres:/var/lib/postgresql/data
+    networks:
+      - spring
+    expose:
+      - 5432
+
+
+
+  mcsv-cursos:
+    container_name: mcsv-cursos
+    image: eliasroy/cursos
+    #build:
+    #context: ./
+    #dockerfile: ./mcsv-cursos/Dockerfile
+    ports:
+      - "8002:8002"
+    environment:
+      PORT: 8002
+      BD_HOST: postgres14:5432
+      BD_DATABASE: mscv_cursos
+      DB_USERNAME: elias
+      DB_PASSWORD: elias
+      USUARIOS_URL: ec2-54-242-171-179.compute-1.amazonaws.com:8001
+    networks:
+      - spring
+
+    restart: always
+
+
+
+volumes:
+  data-postgres:
+    name: "data-postgres"
+
+networks:
+  spring:
