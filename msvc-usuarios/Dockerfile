@@ -38,9 +38,9 @@ ARG PORT_APP=8001
 ENV PORT $PORT_APP
 # Expone el puerto 8001 para que la aplicación pueda ser accesible
 EXPOSE $PORT
-
+CMD sleep 2- && java msvc-usuarios-0.0.1-SNAPSHOT.jar
 # Define el comando de inicio para ejecutar el archivo JAR
-CMD ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
+#CMD ["java", "-jar", "msvc-usuarios-0.0.1-SNAPSHOT.jar"]
 
 # docker build -t usuarios . -f .\msvc-usuarios\Dockerfile
 
